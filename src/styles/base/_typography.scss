@@ -1,0 +1,148 @@
+//Settings
+/* @include font-face("source-sans-pro", "../fonts/font-name", normal, normal, $file-formats: eot woff); */
+$headingFont : 'b yekan',"tahoma","Arial", sans-serif;
+$contentFont : 'iran',"tahoma","Arial", sans-serif;
+$radius      : 2px;
+$basesize    : 16;
+$marginTypo  : 0;
+
+// Rest
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+button,
+textarea,
+label,
+input,
+span,
+a,
+nav,
+section,
+footer,
+header,
+article,
+main,
+aside,
+select,
+option,
+figure{
+  margin: 0;
+  font-family: $headingFont;
+  outline: none;
+}
+
+*,
+*::after,
+*::before{
+  font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  @include box-size(border-box);
+}
+
+h1{
+    font-size: rem(36);
+}
+
+h2{
+    font-size: rem(30);
+}
+
+h3{
+    font-size: rem(24);
+}
+
+h4{
+    font-size: rem(18);
+}
+
+h5{
+    font-size: rem(16);
+}
+
+h6{
+    font-size: rem(14);
+}
+
+p,
+p>a,
+blockquote,
+em,
+q,
+strong,
+big {
+  font-size: 100%;
+  font-family: $contentFont;
+}
+
+
+p{
+    line-height: 24px;
+    color:$color;
+    a{
+      $color:$primary;
+    }
+}
+
+a{
+    text-decoration: none;
+    outline: 0;
+    color:$linkColor;
+    &:hover, &:focus{
+        text-decoration: none;
+        color:darken($linkColor, 10%);
+    }
+}
+
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+a {
+  color: $linkColor;
+  text-decoration: none;
+  transition: color 0.1s linear;
+
+  &:hover {
+    color: darken($linkColor, 10%);
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+
+hr{
+    display: block;
+    border: 0;
+    padding: 0;
+    margin: 1em 0;
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid $seprator;
+}
+
+ul{
+  padding-left: 0;
+  li{
+    list-style: none;
+  }
+}
+
+svg.icon{
+  width: 18px;
+  height: 18px;
+}
+
+
+h2{
+  color:blue;
+}
