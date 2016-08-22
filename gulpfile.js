@@ -1,19 +1,19 @@
-const gulp       = require('gulp');
-const sourcemaps = require('gulp-sourcemaps');
-const concat     = require('gulp-concat');
-const uglify     = require('gulp-uglifyjs');
-const rename     = require('gulp-rename');
-const cssnano    = require('gulp-cssnano');
-const plumber    = require('gulp-plumber');
-const svgmin     = require('gulp-svgmin');
-const svgstore   = require('gulp-svgstore');
-const notify     = require('gulp-notify');
-const sass       = require('gulp-sass');
+const gulp         = require('gulp');
+const sourcemaps   = require('gulp-sourcemaps');
+const concat       = require('gulp-concat');
+const uglify       = require('gulp-uglifyjs');
+const rename       = require('gulp-rename');
+const cssnano      = require('gulp-cssnano');
+const plumber      = require('gulp-plumber');
+const svgmin       = require('gulp-svgmin');
+const svgstore     = require('gulp-svgstore');
+const notify       = require('gulp-notify');
+const sass         = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
-const njRender        = require('gulp-nunjucks-render');
-const nj              = njRender.nunjucks;
-const browserSync     = require('browser-sync');
-const reload          = browserSync.reload;
+const njRender     = require('gulp-nunjucks-render');
+const nj           = njRender.nunjucks;
+const browserSync  = require('browser-sync');
+const reload       = browserSync.reload;
 
 const paths = {
   dist      : 'dist',
@@ -35,7 +35,8 @@ gulp.task('styles', () => {
     .pipe(plumber({errorHandler: onError}))
     .pipe(sourcemaps.init())
     .pipe(sass())
-    // .pipe(cssnano())
+    .pipe(autoprefixer({ browsers: ['last 2 versions'], cascade: false }))
+    .pipe(cssnano({ discardComments: { removeAll: true } }))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.distStyles))
     .pipe(reload({stream:true}));
